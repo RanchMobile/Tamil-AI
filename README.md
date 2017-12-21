@@ -6,6 +6,8 @@ Currently this project supports Inception V3 model (inception_v3).
 
 Sample Traning data is originally from: http://lipitk.sourceforge.net/datasets/tamilchardata.htm
 
+Also used the following document to understand the deep learning: https://web.media.mit.edu/~sra/tamil_cnn.pdf
+
 This project assumes that you already aware of Tensorflow and Python and provided as a starting point.
 
 Let's say we are going to train deep learning AI to learn from 160x160 hand writting, here are the steps to make it work.
