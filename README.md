@@ -37,6 +37,7 @@ Test your installation is success by:
 
 >>> print(sess.run(hello))
 
+Then Exit out of python by entering "quit()" command.
 
 **Step 2: Extract Images**
 
