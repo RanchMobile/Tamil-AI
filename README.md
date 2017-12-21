@@ -66,9 +66,9 @@ Remove all the zip files from that folder.
 
 ### Step 2: Training Your Data for image size 160x160
 
-`python -m retrain --bottleneck_dir=tf_run/160/bottlenecks --model_dir=tf_run/160/models/ --    summaries_dir=tf_run/160/training_summaries/ --output_graph=tf_run/160/retrained_graph.pb --output_labels=tf_run/160/retrained_labels.txt  --how_many_training_steps=4000 --image_dir=Training Data/Tamil/160x160/`
+`(tensorflow)C:> python -m retrain --bottleneck_dir=tf_run/160/bottlenecks --model_dir=tf_run/160/models/ --    summaries_dir=tf_run/160/training_summaries/ --output_graph=tf_run/160/retrained_graph.pb --output_labels=tf_run/160/retrained_labels.txt  --how_many_training_steps=4000 --image_dir=Training Data/Tamil/160x160/`
 
 
 ### Step 3: Validating your own hand written tamil letter by running the following command
 
-`python label_image.py --graph=tf_run/160/retrained_graph.pb  --labels=tf_run/160/retrained_labels.txt --dir=Test_Images/160`
+`(tensorflow)C:> python label_image.py --graph=tf_run/160/retrained_graph.pb  --labels=tf_run/160/retrained_labels.txt --dir=Test_Images/160`
