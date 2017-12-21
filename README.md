@@ -4,12 +4,14 @@ This project is created to detect handwritten letters of Tamil Language (South I
 
 Currently this project supports [Inception V3](https://arxiv.org/abs/1512.00567) model (inception_v3).
 
-Sample Traning data is originally from: http://shiftleft.com/mirrors/www.hpl.hp.com/india/research/penhw-resources/tamil-iwfhr06-train.html
+Sample Traning data is originally from:
+> http://shiftleft.com/mirrors/www.hpl.hp.com/india/research/penhw-resources/tamil-iwfhr06-train.html
 
 You can download the original images:
-http://shiftleft.com/mirrors/www.hpl.hp.com/india/research/penhw-resources/hpl-tamil-iwfhr06-train-offline.tar.gz
+> http://shiftleft.com/mirrors/www.hpl.hp.com/india/research/penhw-resources/hpl-tamil-iwfhr06-train-offline.tar.gz
 
-some of the images are resized for training in 160x160, 64x64, 32x32. 
+some of the images are resized for training in 160x160, 64x64, 32x32 size in JPG format. 
+
 **NOTE: not all the images are currently converted.**
 
 Also used the following document to understand the deep learning: https://web.media.mit.edu/~sra/tamil_cnn.pdf
