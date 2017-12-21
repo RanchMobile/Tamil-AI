@@ -25,7 +25,7 @@ We are going to assume you are on Windows Environment for the following steps.
 
 ### Anaconda
 
-Make sure you have Anaconda is installed for Python 3.6+:
+Make sure you have Anaconda is installed for Python 3.5+:
 https://www.anaconda.com/download/
 
 ### Tensorflow
