@@ -1044,7 +1044,7 @@ def main(_):
   config = tf.ConfigProto()
   config.gpu_options.allow_growth = True
 
-  with tf.device("/device:GPU:0"):
+  #with tf.device("/device:GPU:0"):
    with tf.Session(graph=graph) as sess:
     # Set up the image decoding sub-graph.
     jpeg_data_tensor, decoded_image_tensor = add_jpeg_decoding(
