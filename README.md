@@ -19,7 +19,7 @@ https://www.anaconda.com/download/
 
 **Step 1: Create Tensorflow**
 
-Follow the instruction for Anaconda: https://www.tensorflow.org/install/install_windows#installing_with_anaconda
+Follow the instruction for installing TensorFlow using Anaconda: https://www.tensorflow.org/install/install_windows#installing_with_anaconda
 
 `C:> conda create -n tensorflow python=3.5` 
 
