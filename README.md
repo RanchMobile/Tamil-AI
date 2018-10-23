@@ -1,4 +1,4 @@
-# Tamil AI
+# Tamil AI / Tamil Artificial Intelligence
 
 This project is created to detect handwritten letters of Tamil Language (South Indian Language) through deep learning nural network (TensorFlow / AI).
 
