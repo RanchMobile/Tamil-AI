@@ -68,4 +68,4 @@ Start training your AI by using the following command:
 ### Step 5: Validating your own hand written tamil letter by running the following command
 Validate by testing by providing your own 160 x 160 image. or use the sample from **Test_Images/160** Folder.
 
-`(tensorflow)C:> python label_image.py --graph=tf_run/160/retrained_graph.pb  --labels=tf_run/160/retrained_labels.txt --dir=Test_Images/160`
+`(tensorflow)C:> python label_image.py --test_data_dir=Test_Images/160`
