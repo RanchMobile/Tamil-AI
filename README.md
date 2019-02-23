@@ -64,12 +64,15 @@ Clone this Project to a local folder and go to the folder.
 Unzip the **160x160.zip** file in the **Training Data/Tamil/160x160/** Folder.
 Remove all the zip files from that folder.
 
+### Step 3: Activate TensorFlow
+Go to command Prompt **(Start->Run->CMD)**
+`C:> activate tensorflow`
 
-### Step 3: Training Your Data for image size 160x160
+### Step 4: Training Your Data for image size 160x160
+Start training your AI by using the following command:
 
 `(tensorflow)C:> python -m retrain --bottleneck_dir=tf_run/160/bottlenecks --model_dir=tf_run/160/models/ --    summaries_dir=tf_run/160/training_summaries/ --output_graph=tf_run/160/retrained_graph.pb --output_labels=tf_run/160/retrained_labels.txt  --how_many_training_steps=4000 --image_dir=Training Data/Tamil/160x160/`
 
-
-### Step 4: Validating your own hand written tamil letter by running the following command
-
+### Step 5: Validating your own hand written tamil letter by running the following command
+Validate by testing by providing your own 160 x 160 image. or use the sample from **Test_Images/160** Folder.
 `(tensorflow)C:> python label_image.py --graph=tf_run/160/retrained_graph.pb  --labels=tf_run/160/retrained_labels.txt --dir=Test_Images/160`
