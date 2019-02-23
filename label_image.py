@@ -41,8 +41,10 @@ from __future__ import division
 from __future__ import print_function
 
 import os
+os.environ['TF_CPP_MIN_LOG_LEVEL'] = '2'
 import argparse
 import sys
+import time
 
 import tensorflow as tf
 
@@ -50,7 +52,7 @@ parser = argparse.ArgumentParser()
 #parser.add_argument(
 #    '--image', required=True, type=str, help='Absolute path to image file.')
 parser.add_argument(
-    '--dir', 
+    '--test_data_dir', 
     type=str, 
     default="Test_Images/160",
     help='Absolute path to images folder.')
@@ -107,8 +109,9 @@ def run_graph(dir, labels, input_layer_name, output_layer_name,
     #   dimension represents the input image count, and the other has
     #   predictions per class
     softmax_tensor = sess.graph.get_tensor_by_name(output_layer_name)
-    for subdir, dirs, files in os.walk(FLAGS.dir):
+    for subdir, dirs, files in os.walk(FLAGS.test_data_dir):
 												for file in files:
+																	start_time = time.time()
 																	image_path = os.path.join(subdir, file)
 																	image_data = load_image(image_path)  
 																	predictions, = sess.run(softmax_tensor, {input_layer_name: image_data})
@@ -129,7 +132,7 @@ def run_graph(dir, labels, input_layer_name, output_layer_name,
 																	human_string = labels[top_k[i]]
 																	score = predictions[top_k[i]]*100
 																	print('%s [%.2f%%]' % ( human_string, score))
-																	
+																	print("--- prediction in %s second(s) ---" % (time.time() - start_time))
 																	print('')
     #for node_id in top_k:
     #  human_string = labels[node_id]
@@ -159,8 +162,8 @@ def main(argv):
   # load graph, which is stored in the default session
   load_graph(FLAGS.graph)
   
-  if tf.gfile.Exists(FLAGS.dir):
-								run_graph(FLAGS.dir, labels, FLAGS.input_layer, FLAGS.output_layer,FLAGS.num_top_predictions)								
+  if tf.gfile.Exists(FLAGS.test_data_dir):
+								run_graph(FLAGS.test_data_dir, labels, FLAGS.input_layer, FLAGS.output_layer,FLAGS.num_top_predictions)								
 #																								
 		
 		
