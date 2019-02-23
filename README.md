@@ -63,6 +63,7 @@ Clone this Project to a local folder and go to the folder.
 ### Step 2: Extract Images
 Unzip the **160x160.zip** file in the **Training Data/Tamil/160x160/** Folder.
 Remove all the zip files from that folder.
+You can also use [Tamil Font to Handwriting Image](https://github.com/RanchMobile/Tamil-Font-to-Image-AI) project to generate more images.
 
 ### Step 3: Activate TensorFlow
 Go to command Prompt **(Start->Run->CMD)**
