@@ -146,7 +146,7 @@ def create_image_lists(image_dir, testing_percentage, validation_percentage):
     into training, testing, and validation sets within each label.
   """
   if not gfile.Exists(image_dir):
-    tf.logging.error("Image directory '" + image_dir + "' not found.")
+    tf.logging.error("Image directory '" + image_dir + "' not found. Please make sure you have extracted the 160x160.zip file!")
     return None
   result = {}
   sub_dirs = [x[0] for x in gfile.Walk(image_dir)]
@@ -1188,7 +1188,7 @@ if __name__ == '__main__':
   parser.add_argument(
       '--image_dir',
       type=str,
-      default='',
+      default='Training Data/Tamil/160x160/',
       help='Path to folders of labeled images.'
   )
   parser.add_argument(
