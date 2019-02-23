@@ -41,7 +41,7 @@ OR
 `(tensorflow)C:> pip install --ignore-installed --upgrade tensorflow` 
 
 ### Validate Installation
-Test your installation by runing the following commands using the test.py file in python:
+Test your installation by runing the following commands using the test.py file (provided) in python:
 
 `(tensorflow)C:> py test.py`
 
