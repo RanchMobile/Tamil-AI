@@ -63,7 +63,7 @@ then Type the following command:
 ### Step 4: Training Your Data for image size 160x160
 Start training your AI by using the following command:
 
-`(tensorflow)C:> py -m retrain --bottleneck_dir=tf_run/160/bottlenecks --model_dir=tf_run/160/models/ --    summaries_dir=tf_run/160/training_summaries/ --output_graph=tf_run/160/retrained_graph.pb --output_labels=tf_run/160/retrained_labels.txt  --how_many_training_steps=4000 --image_dir=Training Data/Tamil/160x160/`
+`(tensorflow)C:> py -m retrain --bottleneck_dir=tf_run/160/bottlenecks --model_dir=tf_run/160/models/ --    summaries_dir=tf_run/160/training_summaries/ --output_graph=tf_run/160/retrained_graph.pb --output_labels=tf_run/160/retrained_labels.txt  --how_many_training_steps=6000 --image_dir=Training Data/Tamil/160x160/`
 
 ### Step 5: Validating your own hand written tamil letter by running the following command
 Validate by testing by providing your own 160 x 160 image. or use the sample from **Test_Images/160** Folder.
