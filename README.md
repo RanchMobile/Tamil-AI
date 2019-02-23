@@ -66,6 +66,8 @@ Remove all the zip files from that folder.
 
 ### Step 3: Activate TensorFlow
 Go to command Prompt **(Start->Run->CMD)**
+then Type the following command:
+
 `C:> activate tensorflow`
 
 ### Step 4: Training Your Data for image size 160x160
