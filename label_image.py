@@ -50,7 +50,10 @@ parser = argparse.ArgumentParser()
 #parser.add_argument(
 #    '--image', required=True, type=str, help='Absolute path to image file.')
 parser.add_argument(
-    '--dir', required=True, type=str, help='Absolute path to images folder.')
+    '--dir', 
+    type=str, 
+    default="Test_Images/160",
+    help='Absolute path to images folder.')
 parser.add_argument(
     '--num_top_predictions',
     type=int,
@@ -58,13 +61,13 @@ parser.add_argument(
     help='Display this many predictions.')
 parser.add_argument(
     '--graph',
-    required=True,
     type=str,
+    default="tf_run/160/retrained_graph.pb",
     help='Absolute path to graph file (.pb)')
 parser.add_argument(
     '--labels',
-    required=True,
     type=str,
+    default="tf_run/160/retrained_labels.txt",
     help='Absolute path to labels file (.txt)')
 parser.add_argument(
     '--output_layer',
