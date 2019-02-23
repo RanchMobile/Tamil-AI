@@ -57,7 +57,7 @@ run the following commands in python:
 Then Exit out of python by entering "quit()" command.
 
 ## Steps
-### Step 1: Extract Images
+### Step 1: Clone this Project
 Clone this Project to a local folder and go to the folder.
 
 ### Step 2: Extract Images
