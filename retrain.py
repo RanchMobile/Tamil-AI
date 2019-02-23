@@ -101,6 +101,9 @@ from __future__ import absolute_import
 from __future__ import division
 from __future__ import print_function
 
+import os
+os.environ['TF_CPP_MIN_LOG_LEVEL'] = '2'
+
 import argparse
 from datetime import datetime
 import hashlib
@@ -146,7 +149,7 @@ def create_image_lists(image_dir, testing_percentage, validation_percentage):
     into training, testing, and validation sets within each label.
   """
   if not gfile.Exists(image_dir):
-    tf.logging.error("Image directory '" + image_dir + "' not found. Please make sure you have extracted the 160x160.zip file!")
+    tf.logging.error("Image directory '" + image_dir + "' not found.")
     return None
   result = {}
   sub_dirs = [x[0] for x in gfile.Walk(image_dir)]
@@ -1024,9 +1027,10 @@ def main(_):
       create_model_graph(model_info))
 
   # Look at the folder structure, and create lists of all the images.
-  image_lists = create_image_lists(FLAGS.image_dir, FLAGS.testing_percentage,
-                                   FLAGS.validation_percentage)
+  image_lists = create_image_lists(FLAGS.image_dir, FLAGS.testing_percentage, FLAGS.validation_percentage)
+  
   class_count = len(image_lists.keys())
+
   if class_count == 0:
     tf.logging.error('No valid folders of images found at ' + FLAGS.image_dir)
     return -1
@@ -1044,7 +1048,7 @@ def main(_):
   config = tf.ConfigProto()
   config.gpu_options.allow_growth = True
 
-  #with tf.device("/device:GPU:0"):
+  with tf.device("/device:GPU:0"):
    with tf.Session(graph=graph) as sess:
     # Set up the image decoding sub-graph.
     jpeg_data_tensor, decoded_image_tensor = add_jpeg_decoding(
@@ -1194,13 +1198,13 @@ if __name__ == '__main__':
   parser.add_argument(
       '--output_graph',
       type=str,
-      default='/tmp/output_graph.pb',
+      default='tf_run/160/retrained_graph.pb',
       help='Where to save the trained graph.'
   )
   parser.add_argument(
       '--intermediate_output_graphs_dir',
       type=str,
-      default='/tmp/intermediate_graph/',
+      default='out/intermediate_graph/',
       help='Where to save the intermediate graphs.'
   )
   parser.add_argument(
@@ -1215,13 +1219,13 @@ if __name__ == '__main__':
   parser.add_argument(
       '--output_labels',
       type=str,
-      default='/tmp/output_labels.txt',
+      default='tf_run/160/retrained_labels.txt',
       help='Where to save the trained graph\'s labels.'
   )
   parser.add_argument(
       '--summaries_dir',
       type=str,
-      default='/tmp/retrain_logs',
+      default='tf_run/160/training_summaries/',
       help='Where to save summary logs for TensorBoard.'
   )
   parser.add_argument(
@@ -1295,7 +1299,7 @@ if __name__ == '__main__':
   parser.add_argument(
       '--model_dir',
       type=str,
-      default='/tmp/imagenet',
+      default='tf_run/160/models/',
       help="""\
       Path to classify_image_graph_def.pb,
       imagenet_synset_to_human_label_map.txt, and
@@ -1305,7 +1309,7 @@ if __name__ == '__main__':
   parser.add_argument(
       '--bottleneck_dir',
       type=str,
-      default='/tmp/bottleneck',
+      default='tf_run/160/bottlenecks',
       help='Path to cache bottleneck layer values as files.'
   )
   parser.add_argument(
