@@ -43,7 +43,7 @@ OR
 ### Validate Installation
 Test your installation by runing the following commands using the test.py file in python:
 
-`$ python test.py`
+`(tensorflow)C:> python test.py`
 
 ## Steps
 ### Step 1: Clone this Project
