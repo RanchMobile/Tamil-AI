@@ -63,7 +63,7 @@ then Type the following command:
 ### Step 4: Training Your Data for image size 160x160
 Start training your AI by using the following command:
 
-`(tensorflow)C:> python -m retrain --how_many_training_steps=6000
+`(tensorflow)C:> python -m retrain --how_many_training_steps=6000`
 
 ### Step 5: Validating your own hand written tamil letter by running the following command
 Validate by testing by providing your own 160 x 160 image. or use the sample from **Test_Images/160** Folder.
