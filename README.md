@@ -28,7 +28,7 @@ We are going to assume you are on Windows Environment for the following steps.
 Make sure you have Anaconda is installed for Python 3.5+:
 https://www.anaconda.com/download/
 
-### Tensorflow
+### Create and Activate Tensorflow in Anaconda
 
 Follow the instruction for installing TensorFlow using Anaconda: https://www.tensorflow.org/install/install_windows#installing_with_anaconda
 
@@ -40,21 +40,10 @@ OR
 
 `(tensorflow)C:> pip install --ignore-installed --upgrade tensorflow` 
 
-Test your installation is success by:
+###Validate Installation
+Test your installation by runing the following commands using the test.py file in python:
 
-`$ python`
-
-run the following commands in python:
-
->import tensorflow as tf
-
->hello = tf.constant('Hello, TensorFlow!')
-
->sess = tf.Session()
-
->print(sess.run(hello))
-
-Then Exit out of python by entering "quit()" command.
+`$ python test.py`
 
 ## Steps
 ### Step 1: Clone this Project
