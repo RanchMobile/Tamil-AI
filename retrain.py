@@ -213,6 +213,12 @@ def create_image_lists(image_dir, testing_percentage, validation_percentage):
         'testing': testing_images,
         'validation': validation_images,
     }
+# make sure none of the list is empty, otherwise it will raise an error
+    # when validating / testing
+    if validation_percentage > 0 and not validation_images:
+      validation_images.append(training_images.pop())
+    if testing_percentage > 0 and not testing_images:
+      testing_images.append(training_images.pop())
   return result
 
 
